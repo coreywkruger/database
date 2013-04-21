@@ -12,7 +12,7 @@ using namespace std;
 
 //The node struct is the container for data objects in the tree structure.
 struct node {
-  int index; //The index indicates the nodes place in the list.
+	int index; //The index indicates the nodes place in the list.
 	record* info; //info points to the record object contained by this node.
 	node* right; //right points to this node's right child node in the tree.
 	node* left; //left points to this node's left child node in the tree.

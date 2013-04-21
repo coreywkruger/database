@@ -15,7 +15,7 @@ using namespace std;
 
 class record {
 public:
-  record();
+	record();
 	compRelation Comparison(record rec, itemType item);
 
 	//For setting data members.

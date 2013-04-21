@@ -14,8 +14,9 @@ using namespace std;
 //Constructor
 //Initializes list of tags to identify.
 database::database() {
-  length = 0;
+	length = 0;
 	tags = new tagList("entry", "head", "body", "color", "size");
+	data = NULL;
 }
 
 //Constructor- overloaded for ID assignment.
@@ -25,6 +26,7 @@ database::database(string name) {
 	ID = name;
 	length = 0;
 	tags = new tagList("entry", "head", "body", "color", "size");
+	data = NULL;
 }
 
 //Destructor deletes the list of saved record pointers as well as the list of tags.
@@ -201,7 +203,6 @@ void database::makeTree(fstream& file, int MaxNumRecs) {
 		data->deleteListTree();
 		data = newtree;
 	}
-
 	int i;
 	for (i = 1; i < MaxNumRecs; i++) {
 		record extractedRecord;
@@ -241,6 +242,9 @@ void database::write(string fileName) {
 	//The file indicated by 'fileName' is opened.
 	fstream file;
 	file.open(fileName.c_str(), ios::out);
+
+	if (!file.is_open())
+		cerr << "File '" << fileName << "' could not be opened." << endl;
 
 	//The number of records to be written is obtained.
 	int numEntries = data->getlength();

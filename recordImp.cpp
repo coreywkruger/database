@@ -9,7 +9,7 @@
 #include "miscData.h"
 
 record::record() {
-  //Initialize all data members to empty or zero.
+	//Initialize all data members to empty or zero.
 	setHeader("");
 	setBody("");
 	setColor(0);

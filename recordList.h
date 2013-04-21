@@ -14,7 +14,7 @@ struct node;
 
 class recordList {
 public:
-  //Constructors/Destructors:
+	//Constructors/Destructors:
 	recordList();
 	recordList(string name);
 	~recordList();
