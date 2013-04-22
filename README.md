@@ -7,13 +7,13 @@ If the main file is run ("databaseUploads.cpp") an example is executed. Basicall
 
 A basic read-write operation is done like so:
 
-  database DBA("my-DBA");
+    database DBA("my-DBA");
   
-  DBA.openFile("data/input.dat");
-  DBA.print();
+    DBA.openFile("data/input.dat");
+    DBA.print();
   
-  cout << endl;
-  DBA.write("data/output.dat");
+    cout << endl;
+    DBA.write("data/output.dat");
 
 
 When a database object is created and its openFile() member function is called, information is extracted from the entries in the file (indicated by the given path) and are inserted into a sorted binary tree liked-list. The tree is contained as a private data member of the database object. In this instance, the tree is sorted alphabetically by default according to what is contained inside the 'header' portion of each entry (the option is available to sort by portions other than the header as well). The database object then writes the now sorted content to the file labeled "output.dat". You will notice that this output is now in alphabetical order according to the headers.
