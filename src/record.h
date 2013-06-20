@@ -1,14 +1,14 @@
 /*
- * record.h
+ * node.h
  *
+ *  Created on: Mar 9, 2013
  *      Author: coreykruger
  */
 
 #include <string>
-#include "miscData.h"
 using namespace std;
 
-//This data type is for alphabetic comparisons that take place between record data members.
+enum alphaRelation {GREATER, LESSER, EQUAL};
 
 #ifndef RECORD_H_
 #define RECORD_H_
@@ -16,26 +16,22 @@ using namespace std;
 class record {
 public:
 	record();
-	compRelation Comparison(record rec, itemType item);
+	alphaRelation Comparison(record);
 
-	//For setting data members.
 	void setHeader(string);
 	void setBody(string);
-	void setColor(int);
-	void setSize(int);
+	void setColor(float);
+	void setSize(float);
 
-	//For getting data members.
 	string getHeader();
 	string getBody();
-	int getColor();
-	int getSize();
+	float getColor();
+	float getSize();
 
 private:
-
-	//Data contained in each record.
 	string head;
 	string body;
-	int color;
-	int size;
+	float color;
+	float size;
 };
 #endif
